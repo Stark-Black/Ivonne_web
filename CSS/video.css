@@ -1,0 +1,77 @@
+body {
+    background-image: url('../imagenes/FONDO.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Sans', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center; 
+    position: relative; /* Permite posicionar elementos hijos */
+}
+#titulo {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -10px; 
+    margin-bottom: 10px; 
+}
+#video-container {
+    margin-bottom: 20px; 
+}
+iframe {
+    width: 800px; 
+    height: 400px; 
+    border: none; 
+}
+
+#btn_continuar {
+    font-size: 32px;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Margen superior para el botón CONTINUAR */
+}
+
+#btn_continuar:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#btn_continuar:active {
+    transform: scale(1);
+}
+
+#btn_regresar {
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    font-size: 20px; /* Tamaño de fuente del botón VOLVER */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo */
+    border: none; /* Sin borde */
+    color: #000; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+}
+
+#btn_regresar:hover {
+    background-color: rgba(255, 255, 255, 1); /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+#btn_regresar:active {
+    transform: scale(1); /* Efecto de retroceso al hacer clic */
+}

@@ -1,0 +1,42 @@
+body {
+    background-image: url('../imagenes/FONDO.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Sans', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+#titulo {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -250px; 
+    margin-bottom: 150px;
+}
+
+#boton {
+    font-size: 32px;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#boton:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#boton:active {
+    transform: scale(1);
+}

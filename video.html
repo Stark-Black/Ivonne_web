@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Musica Maestra Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/video.css">
+    
+        <script>
+            function redireccionar() {
+                
+                window.location.href = "pentagrama.html";
+            }
+        </script>
+</head>
+<body>
+    <h1 id="titulo">Musica Maestra</h1>
+    <div id="video-container">
+        <iframe src="https://www.youtube.com/embed/eC0v4lurjyo" allowfullscreen></iframe> 
+    </div>
+    <input id="btn_continuar" type="button" value="CONTINUAR" onclick="redireccionar()">
+    <input id="btn_regresar" type="button" value="VOLVER" onclick="window.history.back();">
+    <script type="text/javascript" src="JS/video.js"></script>
+</body>
+</html>

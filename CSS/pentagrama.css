@@ -1,0 +1,107 @@
+body {
+    background-size: cover;
+    background-image: url('../imagenes/FONDO.png');
+    background-position: center;
+    font-family: 'Sans', sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+#t_penta{
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -250px; 
+    margin-bottom: 150px;
+}
+
+/* Fondo plomo transparente */
+.fondo-transparente {
+    width: 530px; /* Un poco más ancho que el pentagrama */
+    height: 130px; /* Un poco más alto que el pentagrama */
+    background-color: rgba(216, 212, 212, 0.488); /* Color gris con transparencia */
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -107%);
+    z-index: 0; 
+    border-radius: 10px; 
+}
+
+.pentagrama {
+    width: 500px;
+    height: 130px;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 1; /* Pentagrama por encima del fondo */
+}
+
+.linea {
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+
+.linea1 { top: 10px; }  /* Primera línea desde arriba */
+.linea2 { top: 30px; }
+.linea3 { top: 50px; }
+.linea4 { top: 70px; }
+.linea5 { top: 90px; }
+
+.nota {
+    width: 16px;  
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    cursor: grab;
+}
+
+/* Ubicación inicial de las 7 notas fuera del pentagrama */
+.nota1 { top: 220px; left: 150px; }
+.nota2 { top: 220px; left: 180px; }
+.nota3 { top: 220px; left: 210px; }
+.nota4 { top: 220px; left: 240px; }
+.nota5 { top: 220px; left: 270px; }
+.nota6 { top: 220px; left: 300px; }
+.nota7 { top: 220px; left: 330px; }
+
+/* Estilo para mostrar el nombre de la nota */
+#nombreNota {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white; /* Cambiado a blanco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-family: 'Sans', sans-serif; /* Fuente cambiada a Sans */
+}
+
+#btn_regresar {
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    font-size: 20px; /* Tamaño de fuente del botón VOLVER */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo */
+    border: none; /* Sin borde */
+    color: #000; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+    font-family: 'Sans', sans-serif; /* Fuente cambiada a Sans */
+}
+
+#btn_regresar:hover {
+    background-color: rgba(255, 255, 255, 1); /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+#btn_regresar:active {
+    transform: scale(1); /* Efecto de retroceso al hacer clic */
+}
