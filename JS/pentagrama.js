@@ -1,5 +1,16 @@
 'use strict'
 
+function redireccionar() {
+                
+    window.location.href = "notas-flauta.html";
+}
+
+
+
+
+
+
+
   // Mapeo de posiciones en el pentagrama a notas musicales en clave de Sol
   const posicionesNotas = [
     { top: 110, nombre: 'Do' },  // Fuera del pentagrama, debajo de la quinta línea
@@ -78,6 +89,6 @@ function verificarPosicionNota(nota) {
         setTimeout(() => {
             audio.pause();
             audio.currentTime = 0;  // Reiniciar el sonido para la próxima vez
-        }, 500);  // 1000 ms = 1 segundo
+        }, 900);  // 1000 ms = 1 segundo
     }
 }

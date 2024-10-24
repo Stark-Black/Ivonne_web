@@ -1,3 +1,44 @@
+#btn_continuar {
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Margen superior para el botón CONTINUAR */
+    position: absolute;
+    top: 80%;
+    left: 43%;
+}
+
+#btn_continuar:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+#btn_continuar:active {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+
+
+
+
+
+
+
 body {
     background-size: cover;
     background-image: url('../imagenes/FONDO.png');
@@ -20,8 +61,8 @@ body {
 
 /* Fondo plomo transparente */
 .fondo-transparente {
-    width: 530px; /* Un poco más ancho que el pentagrama */
-    height: 130px; /* Un poco más alto que el pentagrama */
+    width: 550px; /* Un poco más ancho que el pentagrama */
+    height: 150px; /* Un poco más alto que el pentagrama */
     background-color: rgba(216, 212, 212, 0.488); /* Color gris con transparencia */
     position: absolute;
     top: 53%;

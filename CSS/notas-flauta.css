@@ -1,0 +1,110 @@
+body { 
+    background-image: url('../imagenes/FONDO.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Sans', sans-serif; /* Fuente Sans aplicada al cuerpo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+#titulo {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -500px;
+    margin-bottom: 150px;
+}
+
+/* Estilo para las imágenes de notas */
+.notas {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Espacio entre las notas */
+    align-items: center;
+    z-index: 1;
+}
+
+.nota-item {
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Aplicación de la fuente Roboto para las notas */
+}
+
+.nota {
+    width: 120px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.nota:hover {
+    opacity: 1;
+}
+
+.nota-item p {
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+    font-weight: bold; /* Hace que el texto sea negrita */
+}
+
+/* Fondo plomo transparente */
+.fondo-transparente {
+    width: 1200px;
+    height: 500px;
+    background-color: rgba(216, 212, 212, 0.488); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn_continuar, #btn_regresar {
+    font-family: 'Sans', sans-serif; /* Fuente Sans aplicada a los botones */
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn_continuar {
+    margin-top: 20px;
+    position: absolute;
+    top: 80%;
+    left: 43%;
+}
+
+#btn_continuar:hover, #btn_regresar:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#btn_regresar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+}
+
+#btn_continuar:active, #btn_regresar:active {
+    transform: scale(1);
+}
+
+#btn_continuar, #btn_regresar {
+    font-family: 'Sans', sans-serif !important; /* Forzar el uso de la fuente */
+    font-size: 20px;
+}

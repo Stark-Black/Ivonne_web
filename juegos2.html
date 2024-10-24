@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Musica Maestra - Relaciona las Notas Parte 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/juegos.css">
+</head>
+<body>
+    <h1 id="titulo">Mini Juego - Relaciona las Notas</h1>
+    
+    <div class="game-container">
+        <!-- Columna de las imágenes de notas musicales -->
+        <div class="column notas">
+            <img src="../imagenes/Fa.png" alt="Fa" class="nota" draggable="true" id="fa">
+            <img src="../imagenes/Sol.png" alt="Sol" class="nota" draggable="true" id="sol">
+            <img src="../imagenes/La.png" alt="La" class="nota" draggable="true" id="la">
+        </div>
+
+        <canvas id="canvas"></canvas>
+
+        <!-- Columna de los dropzones -->
+        <div class="column dropzones">
+            <div class="dropzone" id="drop-fa">Fa</div>
+            <div class="dropzone" id="drop-sol">Sol</div>
+            <div class="dropzone" id="drop-la">La</div>
+        </div>
+    </div>
+
+    <!-- Botón para regresar a la primera página -->
+    <input id="boton" type="button" value="Regresar" onclick="location.href='juegos.html';">
+
+    <script src="JS/juegos.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body {
+    background-image: url('../imagenes/FONDO.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+#titulo {
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: 0; 
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    top: -50px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%; /* Reduce el ancho del contenedor para acercar las columnas */
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 0px; 
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    height: 450px; 
+    margin: 0 5px; /* Reduce el margen entre columnas */
+}
+
+.nota {
+    width: 90px; /* Tamaño de las imágenes */
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dropzone {
+    width: 130px;
+    height: 50px;
+    margin: 5px; /* Reduce el margen de los dropzones */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dropzone.correct {
+    background-color: lightgreen;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#boton {
+    font-size: 28px; 
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 340px; 
+    position: relative;
+    top: 60px;
+}
+
+#boton:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#boton:active {
+    transform: scale(1);
+}
+
+/* Estilos de las líneas */
+canvas {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.line {
+    stroke-width: 2;
+    stroke: black;
+}
