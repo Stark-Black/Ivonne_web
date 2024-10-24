@@ -2,11 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8"/>
-    <title>Melodías Mágicas Video</title>
+    <title>Melodías Mágicas - Video</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/notas-flauta.css">
     <script>
+        var reproduciendo = false;
+
+        // Mapear los sonidos de las notas
+        const sonidosNotas = {
+            'DO': 'Sounds/DO.mp3',
+            'RE': 'Sounds/RE.mp3',
+            'MI': 'Sounds/MI.mp3',
+            'FA': 'Sounds/FA.mp3',
+            'SOL': 'Sounds/SOL.mp3',
+            'LA': 'Sounds/LA.mp3',
+            'SI': 'Sounds/SI.mp3'
+        };
+
+        // Función para reproducir el sonido por 0.9 segundos con volumen bajo
+        function reproducirSonido(notaNombre) {
+            if (sonidosNotas[notaNombre] && !reproduciendo) {
+                reproduciendo = true;
+                let audio = new Audio(sonidosNotas[notaNombre]);
+                audio.volume = 0.3; // Ajustar volumen (0.0 a 1.0)
+                audio.play();
+
+                // Detener el sonido después de 0.9 segundos
+                setTimeout(() => {
+                    audio.pause();
+                    audio.currentTime = 0;  // Reiniciar el sonido para la próxima vez
+                    reproduciendo = false;
+                }, 900);  // 900 ms = 0.9 segundos
+            }
+        }
+
         function redireccionar() {
             window.location.href = "juegos.html";
         }
@@ -15,31 +45,31 @@
 <body>
     <div class="fondo-transparente">
         <div class="notas">
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('DO')">
                 <img src="imagenes/Do.png" alt="Nota Do" class="nota">
                 <p>Do</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('RE')">
                 <img src="imagenes/Re.png" alt="Nota Re" class="nota">
                 <p>Re</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('MI')">
                 <img src="imagenes/Mi.png" alt="Nota Mi" class="nota">
                 <p>Mi</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('FA')">
                 <img src="imagenes/Fa.png" alt="Nota Fa" class="nota">
                 <p>Fa</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('SOL')">
                 <img src="imagenes/Sol.png" alt="Nota Sol" class="nota">
                 <p>Sol</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('LA')">
                 <img src="imagenes/La.png" alt="Nota La" class="nota">
                 <p>La</p>
             </div>
-            <div class="nota-item">
+            <div class="nota-item" onclick="reproducirSonido('SI')">
                 <img src="imagenes/Si.png" alt="Nota Si" class="nota">
                 <p>Si</p>
             </div>
@@ -49,6 +79,5 @@
     <h1 id="titulo">Notas en Flauta Dulce</h1>
     <input id="btn_continuar" type="button" value="CONTINUAR" onclick="redireccionar()">
     <input id="btn_regresar" type="button" value="VOLVER" onclick="window.history.back();">
-    <script type="text/javascript" src="JS/"></script>
 </body>
 </html>
