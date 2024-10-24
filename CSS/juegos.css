@@ -115,3 +115,29 @@ canvas {
     stroke-width: 2;
     stroke: black;
 }
+
+#btn_regresar {
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    font-size: 20px; /* Tamaño de fuente del botón VOLVER */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo */
+    border: none; /* Sin borde */
+    color: #000; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+    font-family: 'Sans', sans-serif; /* Fuente cambiada a Sans */
+}
+
+#btn_regresar:hover {
+    background-color: rgba(255, 255, 255, 1); /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+#btn_regresar:active {
+    transform: scale(1); /* Efecto de retroceso al hacer clic */
+}
