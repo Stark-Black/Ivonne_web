@@ -1,3 +1,26 @@
+/* Estilos generales */
+body {
+    background-size: cover;
+    background-image: url('../imagenes/FONDO.png');
+    background-position: center;
+    font-family: 'Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+#t_penta {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -250px;
+    margin-bottom: 150px;
+}
+
 #btn_continuar {
     font-size: 20px;
     padding: 15px 40px;
@@ -9,67 +32,33 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Margen superior para el botón CONTINUAR */
+    margin-top: 20px;
     position: absolute;
     top: 80%;
-    left: 43%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #btn_continuar:hover {
     background-color: rgba(255, 255, 255, 1);
     transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
 }
 
 #btn_continuar:active {
     transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
 }
 
-
-
-
-
-
-
-
-body {
-    background-size: cover;
-    background-image: url('../imagenes/FONDO.png');
-    background-position: center;
-    font-family: 'Sans', sans-serif; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    flex-direction: column;
-}
-#t_penta{
-    font-size: 48px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: -250px; 
-    margin-bottom: 150px;
-}
-
-/* Fondo plomo transparente */
+/* Fondo transparente detrás del pentagrama */
 .fondo-transparente {
-    width: 550px; /* Un poco más ancho que el pentagrama */
-    height: 150px; /* Un poco más alto que el pentagrama */
-    background-color: rgba(216, 212, 212, 0.488); /* Color gris con transparencia */
+    width: 550px;
+    height: 150px;
+    background-color: rgba(216, 212, 212, 0.488);
     position: absolute;
     top: 53%;
     left: 50%;
     transform: translate(-50%, -107%);
-    z-index: 0; 
-    border-radius: 10px; 
+    z-index: 0;
+    border-radius: 10px;
 }
 
 .pentagrama {
@@ -77,7 +66,7 @@ body {
     height: 130px;
     position: relative;
     margin-bottom: 20px;
-    z-index: 1; /* Pentagrama por encima del fondo */
+    z-index: 1;
 }
 
 .linea {
@@ -87,14 +76,14 @@ body {
     width: 100%;
 }
 
-.linea1 { top: 10px; }  /* Primera línea desde arriba */
+.linea1 { top: 10px; }
 .linea2 { top: 30px; }
 .linea3 { top: 50px; }
 .linea4 { top: 70px; }
 .linea5 { top: 90px; }
 
 .nota {
-    width: 16px;  
+    width: 16px;
     height: 16px;
     background-color: black;
     border-radius: 50%;
@@ -102,7 +91,7 @@ body {
     cursor: grab;
 }
 
-/* Ubicación inicial de las 7 notas fuera del pentagrama */
+/* Posiciones iniciales de las notas */
 .nota1 { top: 220px; left: 150px; }
 .nota2 { top: 220px; left: 180px; }
 .nota3 { top: 220px; left: 210px; }
@@ -111,38 +100,72 @@ body {
 .nota6 { top: 220px; left: 300px; }
 .nota7 { top: 220px; left: 330px; }
 
-/* Estilo para mostrar el nombre de la nota */
 #nombreNota {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    color: white; /* Cambiado a blanco */
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Sans', sans-serif; /* Fuente cambiada a Sans */
+    font-family: 'Sans', sans-serif;
 }
 
 #btn_regresar {
-    position: absolute; /* Posiciona el botón de forma absoluta */
-    top: 20px; /* Distancia desde la parte superior */
-    left: 20px; /* Distancia desde la izquierda */
-    font-size: 20px; /* Tamaño de fuente del botón VOLVER */
-    padding: 10px 20px; /* Espaciado interno */
-    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo */
-    border: none; /* Sin borde */
-    color: #000; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra del botón */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
-    font-family: 'Sans', sans-serif; /* Fuente cambiada a Sans */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Sans', sans-serif;
 }
 
 #btn_regresar:hover {
-    background-color: rgba(255, 255, 255, 1); /* Cambio de color al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
 }
 
 #btn_regresar:active {
-    transform: scale(1); /* Efecto de retroceso al hacer clic */
+    transform: scale(1);
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    #t_penta {
+        font-size: 32px;
+        margin-top: -100px;
+        margin-bottom: 50px;
+    }
+
+    .fondo-transparente {
+        width: 80%;
+        height: 100px;
+        top: 50%;
+    }
+
+    .pentagrama {
+        width: 80%;
+        height: 100px;
+    }
+
+    #btn_continuar {
+        font-size: 18px;
+        padding: 10px 30px;
+        top: 85%;
+    }
+
+    #btn_regresar {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #nombreNota {
+        font-size: 16px;
+    }
 }
