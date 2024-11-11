@@ -57,10 +57,13 @@ body {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    position: relative; /* Mantén la posición de cada dropzone fija */
+
+    
 }
 
 .dropzone.correct {
-    background-color: lightgreen;
+    background-color: lightgreen !important;
 }
 
 #canvas {
