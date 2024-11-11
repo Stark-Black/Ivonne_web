@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melodías de la Flauta - PRACTICANDO</title>
+    <title>PRACTICANDO</title>
+    <!-- Vinculación de Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/pentagrama.css">
     <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
-<body>
-    <h1 id="t_penta">PENTAGRAMA</h1>
+</head>
+<body class="text-center">
 
-    <!-- Fondo plomo transparente detrás del pentagrama -->
-    <div class="fondo-transparente"></div>
+    <div class="container">
+        <h1 id="t_penta" class="my-4">PENTAGRAMA</h1>
 
-    <div class="pentagrama" id="pentagrama">
-        <div class="linea linea1"></div>
-        <div class="linea linea2"></div>
-        <div class="linea linea3"></div>
-        <div class="linea linea4"></div>
-        <div class="linea linea5"></div>
+        <!-- Fondo plomo transparente detrás del pentagrama -->
+        <div class="fondo-transparente"></div>
 
-        <div class="nota nota1"></div>
-        <div class="nota nota2"></div>
-        <div class="nota nota3"></div>
-        <div class="nota nota4"></div>
-        <div class="nota nota5"></div>
-        <div class="nota nota6"></div>
-        <div class="nota nota7"></div>
+        <!-- Contenedor del pentagrama con clases Bootstrap para hacerlo responsive -->
+        <div class="pentagrama mx-auto mb-3" id="pentagrama" style="max-width: 400px;">
+            <div class="linea linea1"></div>
+            <div class="linea linea2"></div>
+            <div class="linea linea3"></div>
+            <div class="linea linea4"></div>
+            <div class="linea linea5"></div>
+
+            <div class="nota nota1"></div>
+            <div class="nota nota2"></div>
+            <div class="nota nota3"></div>
+            <div class="nota nota4"></div>
+            <div class="nota nota5"></div>
+            <div class="nota nota6"></div>
+            <div class="nota nota7"></div>
+        </div>
+
+        <div id="nombreNota" class="mb-4">Mueve una nota para identificarla</div>
+
+        <!-- Botones con clases de Bootstrap -->
+        <input id="btn_continuar" type="button" class="btn btn-primary mb-2" value="CONTINUAR" onclick="redireccionar()">
+        <input id="btn_regresar" type="button" class="btn btn-secondary" value="VOLVER" onclick="window.history.back();">
     </div>
 
-    <div id="nombreNota">Mueve una nota para identificarla</div>
+    <!-- Vinculación de Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script type="text/javascript" src="JS/pentagrama.js"></script>
-    <input id="btn_continuar" type="button" value="CONTINUAR" onclick="redireccionar()">
-    <input id="btn_regresar" type="button" value="VOLVER" onclick="window.history.back();">
 </body>
 </html>
