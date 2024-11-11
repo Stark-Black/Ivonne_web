@@ -17,8 +17,9 @@ body {
     font-size: 48px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: -250px;
-    margin-bottom: 150px;
+    top: 120px;
+    left : 790px;
+    position: absolute;
 }
 
 #btn_continuar {
@@ -50,15 +51,19 @@ body {
 
 /* Fondo transparente detrás del pentagrama */
 .fondo-transparente {
-    width: 550px;
+    width: 510px;
     height: 150px;
     background-color: rgba(216, 212, 212, 0.488);
     position: absolute;
-    top: 53%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -107%);
     z-index: 0;
     border-radius: 10px;
+    -webkit-transform: translate(-50%, -107%);
+    -moz-transform: translate(-50%, -107%);
+    -ms-transform: translate(-50%, -107%);
+    -o-transform: translate(-50%, -107%);
 }
 
 .pentagrama {
@@ -92,13 +97,13 @@ body {
 }
 
 /* Posiciones iniciales de las notas */
-.nota1 { top: 220px; left: 150px; }
-.nota2 { top: 220px; left: 180px; }
-.nota3 { top: 220px; left: 210px; }
-.nota4 { top: 220px; left: 240px; }
-.nota5 { top: 220px; left: 270px; }
-.nota6 { top: 220px; left: 300px; }
-.nota7 { top: 220px; left: 330px; }
+.nota1 { top: 220px; left: 110px; }
+.nota2 { top: 220px; left: 140px; }
+.nota3 { top: 220px; left: 170px; }
+.nota4 { top: 220px; left: 200px; }
+.nota5 { top: 220px; left: 230px; }
+.nota6 { top: 220px; left: 260px; }
+.nota7 { top: 220px; left: 290px; }
 
 #nombreNota {
     margin-top: 20px;
@@ -135,37 +140,3 @@ body {
     transform: scale(1);
 }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 768px) {
-    #t_penta {
-        font-size: 32px;
-        margin-top: -100px;
-        margin-bottom: 50px;
-    }
-
-    .fondo-transparente {
-        width: 80%;
-        height: 100px;
-        top: 50%;
-    }
-
-    .pentagrama {
-        width: 80%;
-        height: 100px;
-    }
-
-    #btn_continuar {
-        font-size: 18px;
-        padding: 10px 30px;
-        top: 85%;
-    }
-
-    #btn_regresar {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    #nombreNota {
-        font-size: 16px;
-    }
-}
