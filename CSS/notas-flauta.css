@@ -1,40 +1,53 @@
-body { 
+body {
     background-image: url('../imagenes/FONDO.png');
     background-size: cover;
     background-position: center;
-    font-family: 'Sans', sans-serif; /* Fuente Sans aplicada al cuerpo */
+    font-family: 'Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
+    text-align: center;
 }
 
 #titulo {
-    font-size: 48px;
+    font-size: 24px; /* Tamaño del título */
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-top: -500px;
-    margin-bottom: 150px;
+    margin-top: 20px; /* Espacio en la parte superior para separarlo */
+    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Asegura que el título esté sobre otros elementos */
 }
 
-/* Estilo para las imágenes de notas */
+.fondo-transparente {
+    margin-top: 60px; /* Ajusta este margen para que el contenido esté debajo del título */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparencia de fondo */
+    border-radius: 10px;
+}
+
+
 .notas {
     display: flex;
     justify-content: center;
-    gap: 60px; /* Espacio entre las notas */
+    gap: 20px; /* Espacio reducido para dispositivos móviles */
     align-items: center;
     z-index: 1;
+    flex-wrap: wrap; /* Permitir que las notas se ajusten en múltiples filas */
+    max-width: 100%; /* Limitar el ancho máximo */
 }
 
 .nota-item {
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Aplicación de la fuente Roboto para las notas */
+    font-family: 'Roboto', sans-serif;
 }
 
 .nota {
-    width: 120px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    width: 60px; /* Reducido para dispositivos móviles */
     height: auto;
     opacity: 0.9;
     transition: opacity 0.3s ease;
@@ -45,32 +58,18 @@ body {
 }
 
 .nota-item p {
-    font-size: 20px;
+    font-size: 14px; /* Reducido para dispositivos móviles */
     color: black;
-    margin-top: 10px;
-    font-weight: bold; /* Hace que el texto sea negrita */
+    margin-top: 5px;
+    font-weight: bold;
 }
 
-/* Fondo plomo transparente */
-.fondo-transparente {
-    width: 1200px;
-    height: 500px;
-    background-color: rgba(216, 212, 212, 0.488); 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    border-radius: 10px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 #btn_continuar, #btn_regresar {
-    font-family: 'Sans', sans-serif; /* Fuente Sans aplicada a los botones */
-    font-size: 20px;
-    padding: 15px 40px;
+    font-family: 'Sans', sans-serif;
+    font-size: 14px; /* Reducido para móviles */
+    padding: 10px 20px; /* Reducido el padding */
     background-color: rgba(255, 255, 255, 0.8);
     border: none;
     color: #000;
@@ -84,8 +83,16 @@ body {
 #btn_continuar {
     margin-top: 20px;
     position: absolute;
-    top: 80%;
-    left: 43%;
+    top: 75%; /* Ajustado para que esté más cerca del centro */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#btn_regresar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 15px; /* Padding reducido para botón de "volver" */
 }
 
 #btn_continuar:hover, #btn_regresar:hover {
@@ -93,18 +100,6 @@ body {
     transform: scale(1.05);
 }
 
-#btn_regresar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-}
-
 #btn_continuar:active, #btn_regresar:active {
     transform: scale(1);
-}
-
-#btn_continuar, #btn_regresar {
-    font-family: 'Sans', sans-serif !important; /* Forzar el uso de la fuente */
-    font-size: 20px;
 }

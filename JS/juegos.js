@@ -23,32 +23,50 @@ const gameContainer = document.querySelector('.game-container');
 canvas.width = gameContainer.clientWidth;
 canvas.height = gameContainer.clientHeight;
 
-// Permitir que las imágenes de notas sean arrastrables
+// Variables para el arrastre
+let selectedNota = null;
+
+// Eventos para arrastrar en dispositivos táctiles
 notas.forEach(nota => {
-    nota.addEventListener('dragstart', function (e) {
-        e.dataTransfer.setData('text', e.target.id);
-    });
-});
-
-// Configurar las áreas de drop para permitir el arrastre y la validación
-dropzones.forEach(zone => {
-    zone.addEventListener('dragover', function (e) {
-        e.preventDefault(); // Permitir el drop
-    });
-
-    zone.addEventListener('drop', function (e) {
+    nota.addEventListener('touchstart', function (e) {
+        selectedNota = e.target;
         e.preventDefault();
-        const notaId = e.dataTransfer.getData('text');
-        const draggedNota = document.getElementById(notaId);
-
-        if (zone.id === 'drop-' + notaId) {
-            zone.classList.add('correct'); // Cambiar color si es correcto
-
-            // Dibujar línea
-            const notaRect = draggedNota.getBoundingClientRect();
-            const dropRect = zone.getBoundingClientRect();
-
-            drawLine(notaRect.right, notaRect.top + notaRect.height / 2, dropRect.left, dropRect.top + dropRect.height / 2);
+    });
+    
+    nota.addEventListener('touchmove', function (e) {
+        if (selectedNota) {
+            const touch = e.touches[0];
+            selectedNota.style.position = "absolute";
+            selectedNota.style.left = touch.clientX - selectedNota.offsetWidth / 2 + "px";
+            selectedNota.style.top = touch.clientY - selectedNota.offsetHeight / 2 + "px";
+            e.preventDefault();
+        }
+    });
+    
+    nota.addEventListener('touchend', function (e) {
+        if (selectedNota) {
+            const touch = e.changedTouches[0];
+            const dropzone = document.elementFromPoint(touch.clientX, touch.clientY);
+            
+            // Verificar si es la zona de drop correcta
+            if (dropzone && dropzone.classList.contains('dropzone') && dropzone.id === 'drop-' + selectedNota.id) {
+                dropzone.classList.add('correct'); // Cambiar color si es correcto
+                
+                // Dibujar línea
+                const notaRect = selectedNota.getBoundingClientRect();
+                const dropRect = dropzone.getBoundingClientRect();
+                
+                drawLine(notaRect.right, notaRect.top + notaRect.height / 2, dropRect.left, dropRect.top + dropRect.height / 2);
+                
+                // Reubicar la nota en la zona correcta
+                dropzone.appendChild(selectedNota);
+                selectedNota.style.position = "static";
+            } else {
+                // Resetear posición si no cae en el dropzone correcto
+                selectedNota.style.position = "static";
+            }
+            selectedNota = null;
+            e.preventDefault();
         }
     });
 });
