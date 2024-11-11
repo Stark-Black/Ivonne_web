@@ -5,32 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Melodías de la Flauta - Relaciona las Notas Parte 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/juegos.css">
 </head>
-<body>
-    <h1 id="titulo">Mini Juego - Relaciona las Notas</h1>
-    
-    <div class="game-container">
-        <!-- Columna de las imágenes de notas musicales -->
-        <div class="column notas">
-            <img src="imagenes/Do.png" alt="Do" class="nota" draggable="true" id="do">
-            <img src="imagenes/Re.png" alt="Re" class="nota" draggable="true" id="re">
-            <img src="imagenes/Mi.png" alt="Mi" class="nota" draggable="true" id="mi">
+<body class="bg-light d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="container text-center">
+        <h1 id="titulo" class="display-5 mb-4">Mini Juego - Relaciona las Notas</h1>
+
+        <div class="row game-container">
+            <!-- Columna de las imágenes de notas musicales -->
+            <div class="col-md-4 d-flex flex-column align-items-center notas mb-3">
+                <img src="../imagenes/Do.png" alt="Do" class="nota mb-2" draggable="true" id="do">
+                <img src="../imagenes/Re.png" alt="Re" class="nota mb-2" draggable="true" id="re">
+                <img src="../imagenes/Mi.png" alt="Mi" class="nota mb-2" draggable="true" id="mi">
+            </div>
+
+            <!-- Canvas para la interacción -->
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <canvas id="canvas" class="w-100"></canvas>
+            </div>
+
+            <!-- Columna de los dropzones -->
+            <div class="col-md-4 d-flex flex-column align-items-center dropzones mb-3">
+                <div class="dropzone p-2 mb-2" id="drop-do">Do</div>
+                <div class="dropzone p-2 mb-2" id="drop-re">Re</div>
+                <div class="dropzone p-2 mb-2" id="drop-mi">Mi</div>
+            </div>
         </div>
 
-        <canvas id="canvas"></canvas>
-
-        <!-- Columna de los dropzones -->
-        <div class="column dropzones">
-            <div class="dropzone" id="drop-do">Do</div>
-            <div class="dropzone" id="drop-re">Re</div>
-            <div class="dropzone" id="drop-mi">Mi</div>
+        <!-- Botones para navegación -->
+        <div class="mt-4">
+            <button id="boton" class="btn btn-primary mr-2" onclick="location.href='juegos2.html';">CONTINUAR</button>
+            <button id="btn_regresar" class="btn btn-secondary" onclick="window.history.back();">VOLVER</button>
         </div>
     </div>
 
-    <!-- Botón para navegar a la segunda página -->
-    <input id="boton" type="button" value="CONTINUAR" onclick="location.href='juegos2.html';">
-    <input id="btn_regresar" type="button" value="VOLVER" onclick="window.history.back();">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/juegos.js"></script>
 </body>
 </html>
