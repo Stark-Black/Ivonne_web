@@ -83,9 +83,13 @@ body {
 #btn_continuar {
     margin-top: 20px;
     position: absolute;
-    top: 75%; /* Ajustado para que esté más cerca del centro */
-    left: 50%;
+    top: 850px;
+    /*Ajustadoparaqueestémáscercadelcentro*/left: 50%;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 #btn_regresar {
