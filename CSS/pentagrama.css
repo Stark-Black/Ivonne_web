@@ -1,117 +1,16 @@
 /* Estilos generales */
-body {
-    background-size: cover;
+body.bg-cover {
     background-image: url('../imagenes/FONDO.png');
+    background-size: cover;
     background-position: center;
     font-family: 'Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    flex-direction: column;
-    text-align: center;
 }
 
 #t_penta {
-    font-size: 48px;
+    font-size: 2.5rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    top: 120px;
-    left : 790px;
-    position: absolute;
-}
-
-#btn_continuar {
-    font-size: 20px;
-    padding: 15px 40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    color: #000;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#btn_continuar:hover {
-    background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
-}
-
-#btn_continuar:active {
-    transform: scale(1);
-}
-
-/* Fondo transparente detrás del pentagrama */
-.fondo-transparente {
-    width: 510px;
-    height: 150px;
-    background-color: rgba(216, 212, 212, 0.488);
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -107%);
-    z-index: 0;
-    border-radius: 10px;
-    -webkit-transform: translate(-50%, -107%);
-    -moz-transform: translate(-50%, -107%);
-    -ms-transform: translate(-50%, -107%);
-    -o-transform: translate(-50%, -107%);
-}
-
-.pentagrama {
-    width: 500px;
-    height: 130px;
-    position: relative;
-    margin-bottom: 20px;
-    z-index: 1;
-}
-
-.linea {
-    height: 3px;
-    background-color: black;
-    position: absolute;
-    width: 100%;
-}
-
-.linea1 { top: 10px; }
-.linea2 { top: 30px; }
-.linea3 { top: 50px; }
-.linea4 { top: 70px; }
-.linea5 { top: 90px; }
-
-.nota {
-    width: 16px;
-    height: 16px;
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    cursor: grab;
-}
-
-/* Posiciones iniciales de las notas */
-.nota1 { top: 220px; left: 110px; }
-.nota2 { top: 220px; left: 140px; }
-.nota3 { top: 220px; left: 170px; }
-.nota4 { top: 220px; left: 200px; }
-.nota5 { top: 220px; left: 230px; }
-.nota6 { top: 220px; left: 260px; }
-.nota7 { top: 220px; left: 290px; }
-
-#nombreNota {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Sans', sans-serif;
 }
 
 #btn_regresar {
@@ -140,3 +39,98 @@ body {
     transform: scale(1);
 }
 
+/* Fondo transparente detrás del pentagrama */
+.fondo-transparente {
+    width: 80%;
+    max-width: 510px;
+    height: 150px;
+    background-color: rgba(216, 212, 212, 0.488);
+    border-radius: 10px;
+    z-index: 0;
+}
+
+/* Pentagrama */
+.pentagrama {
+    width: 80%;
+    max-width: 500px;
+    height: 130px;
+    position: relative;
+    top:-150px;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.linea {
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+}
+
+.linea1 { top: 10px; }
+.linea2 { top: 30px; }
+.linea3 { top: 50px; }
+.linea4 { top: 70px; }
+.linea5 { top: 90px; }
+
+.nota {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    cursor: grab;
+}
+
+/* Posiciones iniciales de las notas */
+.nota1 { top: 190px; left: 140px; }
+.nota2 { top: 190px; left: 170px; }
+.nota3 { top: 190px; left: 200px; }
+.nota4 { top: 190px; left: 230px; }
+.nota5 { top: 190px; left: 260px; }
+.nota6 { top: 190px; left: 290px; }
+.nota7 { top: 190px; left: 320px; }
+#nombreNota {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top:-60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+#btn_continuar {
+    font-size: 20px;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    top: -60px;
+    left: 89px;
+    transform: translateX(-50%);
+}
+
+#btn_continuar:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+#btn_continuar:active {
+    transform: scale(1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #t_penta {
+        font-size: 1.75rem;
+    }
+
+    #nombreNota {
+        font-size: 1rem;
+    }
+}
