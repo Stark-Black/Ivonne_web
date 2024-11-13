@@ -83,7 +83,7 @@ body {
 #btn_continuar {
     margin-top: 20px;
     position: absolute;
-    top: 850px;
+    top: 750px;
     /*Ajustadoparaqueestémáscercadelcentro*/left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
