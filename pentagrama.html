@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="CSS/pentagrama.css">
     <link href="https://fonts.googleapis.com/css2?family=Sans&display=swap" rel="stylesheet">
 </head>
-<body class="text-center">
+<body class="text-center bg-cover">
 
     <div class="container">
-        <h1 id="t_penta" class="my-4">PENTAGRAMA</h1>
+        <h1 id="t_penta" class="my-4 text-white">PENTAGRAMA</h1>
 
         <!-- Fondo plomo transparente detrás del pentagrama -->
-        <div class="fondo-transparente"></div>
+        <div class="fondo-transparente mx-auto mb-3"></div>
 
         <!-- Contenedor del pentagrama con clases Bootstrap para hacerlo responsive -->
-        <div class="pentagrama mx-auto mb-3" id="pentagrama" style="max-width: 400px;">
+        <div class="pentagrama mx-auto mb-3">
             <div class="linea linea1"></div>
             <div class="linea linea2"></div>
             <div class="linea linea3"></div>
@@ -34,11 +34,11 @@
             <div class="nota nota7"></div>
         </div>
 
-        <div id="nombreNota" class="mb-4">Mueve una nota para identificarla</div>
+        <div id="nombreNota" class="mb-4 text-white">Mueve una nota para identificarla</div>
 
         <!-- Botones con clases de Bootstrap -->
-        <input id="btn_continuar" type="button" class="btn btn-primary mb-2" value="CONTINUAR" onclick="redireccionar()">
-        <input id="btn_regresar" type="button" class="btn btn-secondary" value="VOLVER" onclick="window.history.back();">
+        <button id="btn_continuar" class="btn btn-primary btn-lg mb-2" onclick="redireccionar()">CONTINUAR</button>
+        <button id="btn_regresar" class="btn btn-secondary btn-lg" onclick="window.history.back();">VOLVER</button>
     </div>
 
     <!-- Vinculación de Bootstrap JS y dependencias -->
