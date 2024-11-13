@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function redireccionar() {
     window.location.href = "notas-flauta.html";
@@ -6,13 +6,13 @@ function redireccionar() {
 
 // Mapeo de posiciones en el pentagrama a notas musicales en clave de Sol
 const posicionesNotas = [
-    { top: 110, nombre: 'Do' },  // Fuera del pentagrama, debajo de la quinta línea
-    { top: 100, nombre: 'Re' },  // Justo debajo de la quinta línea
-    { top: 90, nombre: 'Mi' },   // En la quinta línea, atravesando la línea
-    { top: 80, nombre: 'Fa' },   // Entre la cuarta y la quinta línea
-    { top: 70, nombre: 'Sol' },  // En la cuarta línea, atravesando la línea
-    { top: 60, nombre: 'La' },   // Entre la tercera y la cuarta línea
-    { top: 50, nombre: 'Si' }    // En la tercera línea, atravesando la línea
+    { top: 110, nombre: 'Do' },
+    { top: 100, nombre: 'Re' },
+    { top: 90, nombre: 'Mi' },
+    { top: 80, nombre: 'Fa' },
+    { top: 70, nombre: 'Sol' },
+    { top: 60, nombre: 'La' },
+    { top: 50, nombre: 'Si' }
 ];
 
 const sonidosNotas = {
@@ -27,17 +27,18 @@ const sonidosNotas = {
 
 const pentagrama = document.getElementById('pentagrama');  // Contenedor del pentagrama
 
-// Función para hacer que las notas sean arrastrables (soporte para ratón y táctil)
+// Función para hacer que las notas sean arrastrables tanto con mouse como con touch
 document.querySelectorAll('.nota').forEach(nota => {
     function startDrag(e) {
         const pentagramaRect = pentagrama.getBoundingClientRect();
-        const isTouch = e.type === 'touchstart';
-        let offsetX = (isTouch ? e.touches[0].clientX : e.clientX) - nota.getBoundingClientRect().left;
-        let offsetY = (isTouch ? e.touches[0].clientY : e.clientY) - nota.getBoundingClientRect().top;
+        const initialX = (e.type === 'touchstart') ? e.touches[0].clientX : e.clientX;
+        const initialY = (e.type === 'touchstart') ? e.touches[0].clientY : e.clientY;
+        let offsetX = initialX - nota.getBoundingClientRect().left;
+        let offsetY = initialY - nota.getBoundingClientRect().top;
 
-        function moveHandler(e) {
-            const clientX = isTouch ? e.touches[0].clientX : e.clientX;
-            const clientY = isTouch ? e.touches[0].clientY : e.clientY;
+        function drag(e) {
+            const clientX = (e.type === 'touchmove') ? e.touches[0].clientX : e.clientX;
+            const clientY = (e.type === 'touchmove') ? e.touches[0].clientY : e.clientY;
             let newLeft = clientX - pentagramaRect.left - offsetX;
             let newTop = clientY - pentagramaRect.top - offsetY;
 
@@ -51,17 +52,21 @@ document.querySelectorAll('.nota').forEach(nota => {
         }
 
         function endDrag() {
-            verificarPosicionNota(nota);
-            document.removeEventListener(isTouch ? 'touchmove' : 'mousemove', moveHandler);
-            document.removeEventListener(isTouch ? 'touchend' : 'mouseup', endDrag);
+            verificarPosicionNota(nota);  // Verificar posición de la nota
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', endDrag);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('touchend', endDrag);
         }
 
-        document.addEventListener(isTouch ? 'touchmove' : 'mousemove', moveHandler);
-        document.addEventListener(isTouch ? 'touchend' : 'mouseup', endDrag);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchmove', drag);
+        document.addEventListener('touchend', endDrag);
     }
 
     nota.addEventListener('mousedown', startDrag);
-    nota.addEventListener('touchstart', startDrag, { passive: true });
+    nota.addEventListener('touchstart', startDrag);
 });
 
 // Verifica la posición de la nota y muestra el nombre correcto
